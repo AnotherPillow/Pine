@@ -24,3 +24,7 @@ CREATE TABLE IF NOT EXISTS USERS (
     cosmetics TEXT
   );
 ```
+
+### License
+
+See `LICENSE` for details. `optifine-backend` is GNU GPL v3. Root directory is [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1).
