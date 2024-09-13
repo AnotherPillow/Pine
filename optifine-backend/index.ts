@@ -9,7 +9,7 @@ const app = express()
 const db = new Database()
 
 // app.get('*', (req, res) => {
-//     console.log({
+//     // console.log({
 //         url: req.hostname + req.url,
 //         body: req.body
 //     })
@@ -20,7 +20,7 @@ const db = new Database()
 const forwardURL = process.env.FORWARDING_HOST!
 
 app.get('/users/:username', async (req, res) => {
-    console.log(req.path)
+    // console.log(req.path)
     const name = req.params.username.replace('.cfg', '')
     if (!name) return forwardURL ? 
         res.redirect(302, forwardURL + req.path) : res.status(404);
@@ -38,7 +38,7 @@ app.get('/users/:username', async (req, res) => {
 })
 
 app.get('/capes/:username', async (req, res) => {
-    console.log(`/capes/${req.params.username}`)
+    // console.log(`/capes/${req.params.username}`)
     const name = req.params.username.replace('.png', '')
     
     if (!name) return forwardURL ? 
@@ -55,7 +55,7 @@ app.get('/capes/:username', async (req, res) => {
 })
 
 app.get('/items/:name/model.cfg', async (req, res) => {
-    console.log(`/items/${req.params.name}/model.cfg`)
+    // console.log(`/items/${req.params.name}/model.cfg`)
     
     const { name } = req.params
     
@@ -65,7 +65,7 @@ app.get('/items/:name/model.cfg', async (req, res) => {
     if (!model || !model?.model) return forwardURL ? 
         res.redirect(302, forwardURL + req.path) : res.status(404);
 
-    console.log(model.model)
+    // console.log(model.model)
 
     return res.status(200).send(model.model.toString().trim())
     
@@ -73,12 +73,12 @@ app.get('/items/:name/model.cfg', async (req, res) => {
 
 app.get('/items/:name/users/:user', async (req, res) => {
     const { name, user } = req.params
-    console.log(`/items/${name}/users/${user}`)
+    // console.log(`/items/${name}/users/${user}`)
     
     const img = await db.getCosmeticImage(name)
     if (!img || !img?.assetURL) return forwardURL ? 
         res.redirect(302, forwardURL + req.path) : res.status(404);
-    console.log(img)
+    // console.log(img)
 
     // return res.redirect(302, img.assetURL as string)
     // return res.redirect(302, 'https://cdn.nest.rip/uploads/f7459e5d-9d58-4179-b14f-78a1ef5b2fbf.png')
