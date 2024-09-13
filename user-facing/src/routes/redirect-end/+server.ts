@@ -1,7 +1,7 @@
 import { error, redirect } from "@sveltejs/kit";
 import { env } from "$env/dynamic/private";
 
-export const GET = async ({ cookies, url, fetch }) => {
+export const GET = async ({ cookies, url, fetch, getClientAddress }) => {
     const token = url.searchParams.get('code')
     if (!token || !token.toString().startsWith('mcauth_')) error(400)
 

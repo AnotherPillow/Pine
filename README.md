@@ -19,7 +19,8 @@ A custom selfhosted optifine cape & cosmetic server.
 - `MCAUTH_CLIENTSECRET` the same [mcauth](https://mc-auth.com/) application's client secret.
 - `TURSO_DATABASE_URL` URL to same DB as backend.
 - `TURSO_AUTH_TOKEN` Auth token for the DB. Has to be read & write.
-- 
+- `IP_SALT` salt used for IP addresses. This should be created [similar to is suggested here](https://authjs.dev/getting-started/deployment) for a secret. Should be >6 characters
+
 ### Database Setup
 
 ```sqlite
@@ -40,8 +41,9 @@ CREATE TABLE IF NOT EXISTS USERS (
     name TEXT PRIMARY KEY,
     uuid TEXT NOT NULL,
     cape TEXT,
-    cosmetics TEXT
-  );
+    cosmetics TEXT,
+    ip TEXT
+);
 ```
 
 ## License

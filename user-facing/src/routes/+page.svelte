@@ -238,6 +238,7 @@
 
         {/if}
     </div>
+    <span id="info-collection-warning">By <strong>signing in</strong> to {community_name}{community_name.endsWith('s') ? "'" : "'s"} <a href="https://github.com/AnotherPillow/Pine" target="_blank">Pine</a> Instance, your Minecraft username and UUID will be collected as is necessary to function. So will all information collected on this page (images, item names, models) as are also necessary. A salted MD5 hash of your IP address will also be stored for moderation purposes.</span>
 </main>
 
 <style lang="scss">
@@ -528,5 +529,12 @@
 
         top: auto !important;
         bottom: 2em !important;
+    }
+
+    #info-collection-warning {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 10px;
     }
 </style>

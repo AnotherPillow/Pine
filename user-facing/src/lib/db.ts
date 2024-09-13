@@ -32,13 +32,12 @@ export default class Database {
         return await this.doesInTable(name, 'cosmetics')
     }
 
-    async makeUser(name: string, uuid: string) {
+    async makeUser(name: string, uuid: string, iphash: string) {
         if (!name || !uuid) return;
         await this.client.execute({
-            sql: 'INSERT INTO users (name, uuid) VALUES (@name, @uuid)',
-            args: { name, uuid }
+            sql: 'INSERT INTO users (name, uuid, ip) VALUES (@name, @uuid, @ip)',
+            args: { name, uuid, ip: iphash }
         }).catch((err) => console.error(`${new Date().toISOString()}> Failed to insert ${name} (${uuid}) into db - ${err?.toString?.()}`))
-        
     }
 
     async getCosmeticsForUser(name: string) {

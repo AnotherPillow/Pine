@@ -8,3 +8,4 @@ export const GET = async ({ cookies  }) => {
 
     return redirect(302, '/')
 }
+
