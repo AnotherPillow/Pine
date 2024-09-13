@@ -5,7 +5,9 @@ export default class Database {
 
     constructor() {
         this.client = createClient({
+            //@ts-ignore why doesnt it not let process exist
             url: process.env.TURSO_DATABASE_URL!,
+            //@ts-ignore why doesnt it not let process exist
             authToken: process.env.TURSO_AUTH_TOKEN!,
         });
     }
@@ -37,6 +39,14 @@ export default class Database {
     async getCosmeticModel(name: string) {
         const data = await this.client.execute({
             sql: 'SELECT model FROM cosmetics where name = ?',
+            args: [ name ],
+        }).catch(console.error)
+        return data?.rows?.length ? data.rows[0] : null
+    }
+
+    async getCosmeticImage(name: string) {
+        const data = await this.client.execute({
+            sql: 'SELECT assetURL FROM cosmetics where name = ?',
             args: [ name ],
         }).catch(console.error)
         return data?.rows?.length ? data.rows[0] : null

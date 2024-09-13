@@ -1,6 +1,8 @@
 
 # Pine's Licensing
 
-All files in the subdirectory `optifine-backend` are licensed under GNU GPL v3. A copy may be found in said directory.
+All files in the subdirectory `optifine-backend` are licensed under GNU AGPL v3. A copy may be found in said directory inside the `LICENSE` file.
+
+All files in the subdirectory `user-facing` are licensed under MPL 2.0. A copy may be found in said directory inside the `LICENSE` file.
 
 All files in the root of this repository, without otherwise being specified in this file are licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. A copy of this license may be found at https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1 .

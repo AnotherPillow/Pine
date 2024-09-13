@@ -1,6 +1,8 @@
 assets/
+!user-facing/src/lib/assets
 models/
 .env
 dbstuff.txt
 node_modules/
 old/
+text.json
