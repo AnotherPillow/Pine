@@ -1,5 +1,6 @@
+# Pine
 
-
+A custom selfhosted optifine cape & cosmetic server.
 
 ### Database Setup
 
@@ -27,4 +28,4 @@ CREATE TABLE IF NOT EXISTS USERS (
 
 ### License
 
-See `LICENSE` for details. `optifine-backend` is GNU GPL v3. Root directory is [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1).
+See `LICENSE` for details. `optifine-backend` is GNU AGPL v3. `user-facing` is MPL 2.0. Root directory is [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1).
