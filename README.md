@@ -20,6 +20,8 @@ A custom selfhosted optifine cape & cosmetic server.
 - `TURSO_DATABASE_URL` URL to same DB as backend.
 - `TURSO_AUTH_TOKEN` Auth token for the DB. Has to be read & write.
 - `IP_SALT` salt used for IP addresses. This should be created [similar to is suggested here](https://authjs.dev/getting-started/deployment) for a secret. Should be >6 characters
+- `PUBLIC_COMMUNITY_NAME` self explanatory.
+- `PUBLIC_BACKDROP` url to background image.
 
 ### Database Setup
 

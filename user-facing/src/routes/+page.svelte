@@ -1,24 +1,26 @@
 <script lang="ts">
     import { env } from '$env/dynamic/public';
     import { dev } from '$app/environment';
-    import { community_name, backdrop } from '$lib/assets/text.json'
     import '@fontsource-variable/montserrat';
     import '@fontsource-variable/nunito';
     import { onMount } from 'svelte';
     import { Toasts, toast } from 'svoast';
     import readFileContent from '$lib/readFileContent.js';
-
+    
     export let data;
     // console.log(data)
-
+    
     const authenticateUser = () => {
         // const redirURL = new URL('')
         // redirURL.searchParams.append('client_id', env.PUBLIC_MCAUTH_CLIENTID)
         // redirURL.searchParams.append('redirect_uri', 'http://localhost:58932/redirect-end')
         // redirURL.searchParams.append('response_type', 'token')
-
+        
         window.location.href = `https://mc-auth.com/oAuth2/authorize?client_id=${env.PUBLIC_MCAUTH_CLIENTID}&redirect_uri=${window.location.origin + '/redirect-end'}&response_type=code&scope=profile`
     }
+
+    const community_name = env.PUBLIC_COMMUNITY_NAME
+    const backdrop = env.PUBLIC_BACKDROP
 
     let _capeCanvas: HTMLCanvasElement;
     let _capeCtx: CanvasRenderingContext2D;
