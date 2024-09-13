@@ -6,6 +6,9 @@
     import { onMount } from 'svelte';
     import { Toasts, toast } from 'svoast';
     import readFileContent from '$lib/readFileContent.js';
+    import { inject } from '@vercel/analytics';
+    
+    inject({ mode: dev ? 'development' : 'production' });
     
     export let data;
     // console.log(data)
