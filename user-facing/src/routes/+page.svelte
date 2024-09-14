@@ -11,14 +11,8 @@
     inject({ mode: dev ? 'development' : 'production' });
     
     export let data;
-    // console.log(data)
     
     const authenticateUser = () => {
-        // const redirURL = new URL('')
-        // redirURL.searchParams.append('client_id', env.PUBLIC_MCAUTH_CLIENTID)
-        // redirURL.searchParams.append('redirect_uri', 'http://localhost:58932/redirect-end')
-        // redirURL.searchParams.append('response_type', 'token')
-        
         window.location.href = `https://mc-auth.com/oAuth2/authorize?client_id=${env.PUBLIC_MCAUTH_CLIENTID}&redirect_uri=${window.location.origin + '/redirect-end'}&response_type=code&scope=profile`
     }
 
@@ -77,9 +71,6 @@
         else return toast.error('Failed to change: ' + json)
 
         setTimeout(() => window.location.reload(), 5000)
-        
-
-        // console.log(res.status, res.statusText, )
     }
 
     let _creationUIMode: null | 'cape' | 'cosmetic'
