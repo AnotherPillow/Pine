@@ -96,4 +96,4 @@ app.get('/items/:name/users/:user', async (req, res) => {
 
 })
 
-app.listen(80, 's.optifine.net')
+app.listen(80, process.env.HOSTING_HOST!)

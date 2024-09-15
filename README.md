@@ -11,6 +11,7 @@ A custom selfhosted optifine cape & cosmetic server.
 - `TURSO_DATABASE_URL`: URL to a turso DB.
 - `TURSO_AUTH_TOKEN`: Auth token for the DB above, can be read-only if you wish.
 - `FORWARDING_HOST`: Domain/Host to forward requests to if the Pine instance doesn't have one (such as to see normal optifine capes)
+- `HOSTING_HOST`: Host for the server to listen on.
 
 #### `user-facing`
 
