@@ -96,4 +96,4 @@ app.get('/items/:name/users/:user', async (req, res) => {
 
 })
 
-app.listen(80, process.env.HOSTING_HOST!)
+app.listen(parseInt(process.env.HOSTING_PORT!), process.env.HOSTING_HOST!)
